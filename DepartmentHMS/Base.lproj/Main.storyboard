@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DepartmentHMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="VUV-g9-9bq">
+                                <rect key="frame" x="20" y="117" width="560" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-Av-dnt">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="addNewTeacher:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRh-AO-9in"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW6-F1-ZvO">
+                                        <rect key="frame" x="219" y="0.0" width="36" height="30"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearTextFields:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6mv-BV-17q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frh-PG-iA9">
+                                        <rect key="frame" x="439" y="0.0" width="121" height="30"/>
+                                        <state key="normal" title="View All Teachers"/>
+                                        <connections>
+                                            <action selector="viewAllTeacher:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEq-Tc-a4a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DQI-Bb-68U">
+                                <rect key="frame" x="0.0" y="167" width="600" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacherCell" id="i3y-0L-h4h" customClass="TeacherTblVIewCell" customModule="DepartmentHMS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3y-0L-h4h" id="5jI-Lm-M7n">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpT-v7-Htq">
+                                                    <rect key="frame" x="25" y="13" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Kf-7u-kec">
+                                                    <rect key="frame" x="528" y="6" width="45" height="30"/>
+                                                    <state key="normal" title="Delete"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QpT-v7-Htq" secondAttribute="bottom" constant="1" id="7Bo-Ac-SDV"/>
+                                                <constraint firstItem="QpT-v7-Htq" firstAttribute="top" secondItem="5jI-Lm-M7n" secondAttribute="topMargin" constant="5" id="f9P-kc-3qR"/>
+                                                <constraint firstItem="QpT-v7-Htq" firstAttribute="leading" secondItem="5jI-Lm-M7n" secondAttribute="leadingMargin" constant="17" id="iAs-cR-Cnb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3Kf-7u-kec" secondAttribute="trailing" constant="19" id="vsn-Fh-hJV"/>
+                                                <constraint firstItem="3Kf-7u-kec" firstAttribute="centerY" secondItem="QpT-v7-Htq" secondAttribute="centerY" constant="-2.5" id="ya1-c4-Z1D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteBtn" destination="3Kf-7u-kec" id="pSF-Se-u9f"/>
+                                            <outlet property="teacherName" destination="QpT-v7-Htq" id="8bP-Aa-WJq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teacher Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1GC-8D-VDo">
+                                <rect key="frame" x="20" y="28" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teacher Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fqy-Dm-EDp">
+                                <rect key="frame" x="20" y="71" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjN-X1-6YY">
+                                <rect key="frame" x="243" y="556" width="114" height="30"/>
+                                <state key="normal" title="Add Department"/>
+                                <connections>
+                                    <segue destination="YxP-pL-2s4" kind="show" id="B7I-Nc-seq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DQI-Bb-68U" secondAttribute="trailing" id="3lq-gb-3zQ"/>
+                            <constraint firstAttribute="trailing" secondItem="1GC-8D-VDo" secondAttribute="trailing" constant="20" id="4mV-oW-SU8"/>
+                            <constraint firstItem="fqy-Dm-EDp" firstAttribute="top" secondItem="1GC-8D-VDo" secondAttribute="bottom" constant="13" id="DxP-7R-P9C"/>
+                            <constraint firstItem="DQI-Bb-68U" firstAttribute="top" secondItem="VUV-g9-9bq" secondAttribute="bottom" constant="20" id="GiM-E9-RE1"/>
+                            <constraint firstAttribute="trailing" secondItem="fqy-Dm-EDp" secondAttribute="trailing" constant="20" id="Ipb-yk-rN3"/>
+                            <constraint firstItem="DQI-Bb-68U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ItK-23-5eD"/>
+                            <constraint firstItem="LjN-X1-6YY" firstAttribute="top" secondItem="DQI-Bb-68U" secondAttribute="bottom" constant="22" id="SMa-FT-ghJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DQI-Bb-68U" secondAttribute="bottom" id="a4d-JL-vVQ"/>
+                            <constraint firstItem="1GC-8D-VDo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="be6-XA-ykC"/>
+                            <constraint firstItem="1GC-8D-VDo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="bw8-4e-HIG"/>
+                            <constraint firstItem="fqy-Dm-EDp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="cbO-xA-EbR"/>
+                            <constraint firstItem="VUV-g9-9bq" firstAttribute="top" secondItem="fqy-Dm-EDp" secondAttribute="bottom" constant="16" id="ckd-in-wUQ"/>
+                            <constraint firstItem="LjN-X1-6YY" firstAttribute="top" secondItem="DQI-Bb-68U" secondAttribute="bottom" constant="22" id="fc7-vL-Q2e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LjN-X1-6YY" secondAttribute="bottom" constant="14" id="hgW-Mm-6Nu"/>
+                            <constraint firstItem="LjN-X1-6YY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o0M-31-WKP"/>
+                            <constraint firstAttribute="trailing" secondItem="VUV-g9-9bq" secondAttribute="trailing" constant="20" id="ulx-8j-jwt"/>
+                            <constraint firstItem="VUV-g9-9bq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vga-xv-HDw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="a4d-JL-vVQ"/>
+                                <exclude reference="fc7-vL-Q2e"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addStdnBtn" destination="YTc-Av-dnt" id="24V-Fw-emA"/>
+                        <outlet property="teachNameTxtField" destination="1GC-8D-VDo" id="lgD-BW-4rp"/>
+                        <outlet property="teacherAddTxtField" destination="fqy-Dm-EDp" id="aei-uV-8kG"/>
+                        <outlet property="viewTeachertblView" destination="DQI-Bb-68U" id="QSI-ny-fnF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="378"/>
+        </scene>
+        <!--Department View Controller-->
+        <scene sceneID="te7-hS-ogo">
+            <objects>
+                <viewController id="YxP-pL-2s4" customClass="DepartmentViewController" customModule="DepartmentHMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ve2-EW-LzF"/>
+                        <viewControllerLayoutGuide type="bottom" id="rO4-vl-zWe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SFf-vY-Txb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Department Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FFA-QV-EGB">
+                                <rect key="frame" x="20" y="82" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-hm-LQ3">
+                                <rect key="frame" x="40" y="140" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTestData:" destination="YxP-pL-2s4" eventType="touchUpInside" id="Du4-s0-oW7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pea-Fr-XXB">
+                                <rect key="frame" x="441" y="140" width="139" height="30"/>
+                                <state key="normal" title="List All Departments"/>
+                                <connections>
+                                    <action selector="listTestName:" destination="YxP-pL-2s4" eventType="touchUpInside" id="1gL-2m-VOv"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-yR-jx5">
+                                <rect key="frame" x="0.0" y="181" width="600" height="419"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacherCell" id="PPj-kC-eXS" customClass="TeacherTblVIewCell" customModule="DepartmentHMS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PPj-kC-eXS" id="1d2-WS-yLl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmU-zY-FBy">
+                                                    <rect key="frame" x="24" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCp-kW-Jr5">
+                                                    <rect key="frame" x="528" y="7" width="45" height="30"/>
+                                                    <state key="normal" title="Delete"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AmU-zY-FBy" firstAttribute="leading" secondItem="1d2-WS-yLl" secondAttribute="leading" constant="24" id="57e-uM-OmE"/>
+                                                <constraint firstAttribute="trailing" secondItem="bCp-kW-Jr5" secondAttribute="trailing" constant="27" id="UtO-4z-mkp"/>
+                                                <constraint firstAttribute="bottom" secondItem="AmU-zY-FBy" secondAttribute="bottom" constant="11" id="lWw-NQ-fMO"/>
+                                                <constraint firstItem="bCp-kW-Jr5" firstAttribute="centerY" secondItem="AmU-zY-FBy" secondAttribute="centerY" id="p1u-h2-rbh"/>
+                                                <constraint firstItem="AmU-zY-FBy" firstAttribute="top" secondItem="1d2-WS-yLl" secondAttribute="top" constant="11" id="sSC-NM-N52"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteBtn" destination="bCp-kW-Jr5" id="rfr-xO-dIO"/>
+                                            <outlet property="teacherName" destination="AmU-zY-FBy" id="JBi-rA-DRN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-er-bye">
+                                <rect key="frame" x="19" y="31" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="YxP-pL-2s4" eventType="touchUpInside" id="zXD-9L-jMj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pea-Fr-XXB" firstAttribute="centerY" secondItem="ktV-hm-LQ3" secondAttribute="centerY" id="1ja-Wq-rIm"/>
+                            <constraint firstItem="rfm-yR-jx5" firstAttribute="top" secondItem="Pea-Fr-XXB" secondAttribute="bottom" constant="11" id="2zM-77-ijd"/>
+                            <constraint firstItem="rO4-vl-zWe" firstAttribute="top" secondItem="rfm-yR-jx5" secondAttribute="bottom" id="3wD-dg-Udq"/>
+                            <constraint firstItem="ktV-hm-LQ3" firstAttribute="top" secondItem="FFA-QV-EGB" secondAttribute="bottom" constant="28" id="4Ss-mh-MJB"/>
+                            <constraint firstItem="FFA-QV-EGB" firstAttribute="top" secondItem="o1x-er-bye" secondAttribute="bottom" constant="21" id="EUX-Ma-Gc5"/>
+                            <constraint firstAttribute="trailing" secondItem="rfm-yR-jx5" secondAttribute="trailing" id="Gif-Qi-N2c"/>
+                            <constraint firstItem="ktV-hm-LQ3" firstAttribute="leading" secondItem="SFf-vY-Txb" secondAttribute="leadingMargin" constant="20" id="GrD-Wq-ROF"/>
+                            <constraint firstAttribute="trailing" secondItem="Pea-Fr-XXB" secondAttribute="trailing" constant="20" id="TPy-Ig-3nE"/>
+                            <constraint firstItem="FFA-QV-EGB" firstAttribute="top" secondItem="Ve2-EW-LzF" secondAttribute="bottom" constant="29" id="Y9n-80-JZm"/>
+                            <constraint firstItem="FFA-QV-EGB" firstAttribute="leading" secondItem="SFf-vY-Txb" secondAttribute="leading" constant="20" id="ZzW-AC-haM"/>
+                            <constraint firstItem="o1x-er-bye" firstAttribute="top" secondItem="SFf-vY-Txb" secondAttribute="top" constant="31" id="fP2-kZ-y3O"/>
+                            <constraint firstAttribute="trailing" secondItem="FFA-QV-EGB" secondAttribute="trailing" constant="20" id="jz8-Bk-cXU"/>
+                            <constraint firstItem="o1x-er-bye" firstAttribute="leading" secondItem="SFf-vY-Txb" secondAttribute="leading" constant="19" id="pON-Mg-Tm7"/>
+                            <constraint firstItem="rfm-yR-jx5" firstAttribute="leading" secondItem="SFf-vY-Txb" secondAttribute="leading" id="yGr-lQ-szA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Y9n-80-JZm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="testNameTxtField" destination="FFA-QV-EGB" id="XmZ-Hy-poq"/>
+                        <outlet property="testTableView" destination="rfm-yR-jx5" id="b25-jE-b0V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDb-Bv-AhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="378"/>
+        </scene>
+    </scenes>
+</document>
