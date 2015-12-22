@@ -13,7 +13,6 @@ class TeacherTblVIewCell: UITableViewCell {
     @IBOutlet weak var teacherName: UILabel!
     
     @IBOutlet weak var deleteBtn: UIButton!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +24,7 @@ class TeacherTblVIewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+    
 
 }

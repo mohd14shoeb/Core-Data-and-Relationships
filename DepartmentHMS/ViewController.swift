@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         viewTeachertblView.delegate = self
         viewTeachertblView.dataSource = self
+        listAllTeachers()
+
         
     }
     
@@ -88,11 +90,7 @@ class ViewController: UIViewController {
     @IBAction func viewAllTeacher(sender: AnyObject) {
         
         listAllTeachers()
-        if  teacherObj.count > 0 {
-            
-            viewTeachertblView.reloadData()
-            
-        }
+      
         
     }
     
@@ -108,6 +106,11 @@ class ViewController: UIViewController {
             
             let results = try context.executeFetchRequest(fetchReq)
             teacherObj = results as! [NSManagedObject]
+            if  teacherObj.count > 0 {
+                
+                viewTeachertblView.reloadData()
+                
+            }
             
         }catch{
             
@@ -155,7 +158,13 @@ class ViewController: UIViewController {
             teacherAddTxtField.text = ""
             self.view.endEditing(true)
             let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
-            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let defaultAction  = UIAlertAction(title: "OK", style: .Default){(action) in
+                
+                self.listAllTeachers()
+            
+            
+            
+            }
             alertController.addAction(defaultAction)
             alertController.message = "Teacher Name Added"
             self.presentViewController(alertController, animated: true, completion: nil)
@@ -281,5 +290,51 @@ extension ViewController :UITableViewDataSource,UITableViewDelegate{
         }
         
     }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("just pass the model object to other class and show the departments all")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("teacherDetail") as! TeacherDetailVC
+        vc.selectedTeacherObj = teacherObj[indexPath.row]
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    func addOneTeacherToDept(){
+        
+//        let context = appDelegate.managedObjectContext
+//        let entityDes = NSEntityDescription.entityForName("Teachers", inManagedObjectContext: context)
+//        let newTeacher = NSManagedObject(entity: entityDes!, insertIntoManagedObjectContext: context)
+//        newTeacher.setValue("shyam kirat rai1", forKey: "teacher_name")
+//        newTeacher.setValue("IIT, mumbai maharastra1", forKey: "teacher_address")
+//        
+//        //set department for this teacher
+//    
+//        let entityDescrip = NSEntityDescription.entityForName("Departments", inManagedObjectContext: context)
+//        let newDept = NSManagedObject(entity: entityDescrip!, insertIntoManagedObjectContext: context) as! TestEntity
+//        newDept.dept_name = "Civil HOD1"
+//        
+//        //add this department to the person
+//        newTeacher.setValue(NSSet(object: newDept), forKey: "departments")
+//        do{
+//        
+//            try newTeacher.managedObjectContext?.save()
+//            
+//        }catch{
+//            
+//            print((error as NSError).debugDescription)
+//    
+//        }
+//        
+//        let allDeptsForTheTeacher = newTeacher.mutableSetValueForKey("departments")
+//        print(allDeptsForTheTeacher)
+//        
+//        //to get all the teachers for that department
+//        let allTeacherFortTheDepartment = newDept.mutableSetValueForKey("teachers")
+//        print(allTeacherFortTheDepartment)
+        
+    }
+    
 }
 

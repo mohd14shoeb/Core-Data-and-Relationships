@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8BF263C1C199FA6007F5FED /* TeacherTblVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF263B1C199FA6007F5FED /* TeacherTblVIewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		B8BF26431C19A6B0007F5FED /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B8BF264C1C19ACC1007F5FED /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF264A1C19ACC1007F5FED /* TestEntity+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		B8BF264D1C19ACC1007F5FED /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF264B1C19ACC1007F5FED /* TestEntity.swift */; settings = {ASSET_TAGS = (); }; };
+		B8BF263C1C199FA6007F5FED /* TeacherTblVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF263B1C199FA6007F5FED /* TeacherTblVIewCell.swift */; };
+		B8BF26431C19A6B0007F5FED /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */; };
+		B8BF264C1C19ACC1007F5FED /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF264A1C19ACC1007F5FED /* TestEntity+CoreDataProperties.swift */; };
+		B8BF264D1C19ACC1007F5FED /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF264B1C19ACC1007F5FED /* TestEntity.swift */; };
 		B8F785991C1967980074D04F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785981C1967980074D04F /* AppDelegate.swift */; };
 		B8F7859B1C1967980074D04F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7859A1C1967980074D04F /* ViewController.swift */; };
 		B8F7859E1C1967980074D04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F7859C1C1967980074D04F /* Main.storyboard */; };
 		B8F785A11C1967980074D04F /* DepartmentHMS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8F7859F1C1967980074D04F /* DepartmentHMS.xcdatamodeld */; };
 		B8F785A31C1967980074D04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F785A21C1967980074D04F /* Assets.xcassets */; };
 		B8F785A61C1967980074D04F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F785A41C1967980074D04F /* LaunchScreen.storyboard */; };
-		B8F785AF1C196BB20074D04F /* Teachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		B8F785B01C196BB20074D04F /* Teachers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AE1C196BB20074D04F /* Teachers.swift */; settings = {ASSET_TAGS = (); }; };
+		B8F785AF1C196BB20074D04F /* Teachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */; };
+		B8F785B01C196BB20074D04F /* Teachers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AE1C196BB20074D04F /* Teachers.swift */; };
+		F89BAF811C29DA9C00BC3477 /* TeacherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B8F785A71C1967980074D04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B8F785AE1C196BB20074D04F /* Teachers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teachers.swift; sourceTree = "<group>"; };
+		F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				B8F7859A1C1967980074D04F /* ViewController.swift */,
 				B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */,
+				F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89BAF811C29DA9C00BC3477 /* TeacherDetailVC.swift in Sources */,
 				B8F785A11C1967980074D04F /* DepartmentHMS.xcdatamodeld in Sources */,
 				B8F785B01C196BB20074D04F /* Teachers.swift in Sources */,
 				B8F7859B1C1967980074D04F /* ViewController.swift in Sources */,

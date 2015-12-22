@@ -2,12 +2,47 @@
 
 import UIKit
 
-var str = "Hello, playground"
+protocol Drivable {
+    var topSpeed: Int { get }
+}
 
-var array = [1,2,3,4,5]
+protocol Reversible {
+    var reverseSpeed: Int { get }
+}
 
-array.removeAtIndex(2)
-print(array)
+protocol Transport {
+    var seatCount: Int { get }
+}
 
-array.removeAtIndex(2)
-print(array)
+extension Drivable{
+
+    func isfasterThan(item:Drivable) -> Bool{
+    
+    return self.topSpeed > item.topSpeed
+    
+    }
+
+}
+extension Drivable where Self:Transport{
+
+    func hasLargerSeatsThan(item:Self)-> Bool{
+    
+    return self.seatCount > item.seatCount
+    
+    }
+
+}
+
+
+struct Car: Drivable, Reversible, Transport {
+    var topSpeed = 250
+    var reverseSpeed = 20
+    var seatCount = 5
+}
+
+let sedan = Car()
+let sportsCar = Car(topSpeed: 180, reverseSpeed: 60, seatCount: 6)
+sedan.isfasterThan(sportsCar)
+
+sedan.hasLargerSeatsThan(sportsCar)
+

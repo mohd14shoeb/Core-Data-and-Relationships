@@ -25,6 +25,7 @@ class DepartmentViewController: UIViewController {
         // Do any additional setup after loading the view.
         testTableView.delegate = self
         testTableView.dataSource = self
+        ListAllDepartments()
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,10 +149,13 @@ class DepartmentViewController: UIViewController {
             try  test.managedObjectContext?.save()
             
             let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
-            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let defaultAction  = UIAlertAction(title: "OK", style: .Default){(action) in
+             self.ListAllDepartments()
+            
+            }
             alertController.addAction(defaultAction)
             alertController.message = "Department Name Added"
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.presentViewController(alertController, animated: true,completion: nil)
             self.view.endEditing(true)
             testNameTxtField.text = ""
             
@@ -169,6 +173,12 @@ class DepartmentViewController: UIViewController {
     }
     @IBAction func listTestName(sender: AnyObject) {
         
+        ListAllDepartments()
+        
+    }
+    
+    func ListAllDepartments(){
+        
         let context = appDelegate.managedObjectContext
         let fetchReq = NSFetchRequest(entityName: "Departments")
         deptObj = []
@@ -178,9 +188,9 @@ class DepartmentViewController: UIViewController {
             deptObj = results as! [TestEntity]
             
             if deptObj.count > 0{
-            
-            self.testTableView.reloadData()
-            
+                
+                self.testTableView.reloadData()
+                
             }
             
         }catch{
@@ -188,7 +198,11 @@ class DepartmentViewController: UIViewController {
             print((error as NSError).localizedDescription)
             
         }
-        
+
+    
+    
+    
+    
     }
 
 }
