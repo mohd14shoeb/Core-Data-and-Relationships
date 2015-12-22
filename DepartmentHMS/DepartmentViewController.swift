@@ -198,10 +198,6 @@ class DepartmentViewController: UIViewController {
             print((error as NSError).localizedDescription)
             
         }
-
-    
-    
-    
     
     }
 
