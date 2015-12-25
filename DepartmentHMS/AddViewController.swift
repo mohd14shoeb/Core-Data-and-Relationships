@@ -275,7 +275,7 @@ class AddViewController: UIViewController {
             
         }
         
-        guard deptName.characters.count > 3  else{
+        guard deptName.characters.count >= 3  else{
             
             throw FormError.LessThanFiveWords
             

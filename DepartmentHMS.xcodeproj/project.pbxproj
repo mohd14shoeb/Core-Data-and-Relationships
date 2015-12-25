@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B8BF263C1C199FA6007F5FED /* TeacherTblVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF263B1C199FA6007F5FED /* TeacherTblVIewCell.swift */; };
-		B8BF26431C19A6B0007F5FED /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */; };
 		B8F785991C1967980074D04F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785981C1967980074D04F /* AppDelegate.swift */; };
 		B8F7859B1C1967980074D04F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7859A1C1967980074D04F /* ViewController.swift */; };
 		B8F7859E1C1967980074D04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F7859C1C1967980074D04F /* Main.storyboard */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		B8BF263B1C199FA6007F5FED /* TeacherTblVIewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTblVIewCell.swift; sourceTree = "<group>"; };
-		B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		B8F785951C1967980074D04F /* DepartmentHMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DepartmentHMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F785981C1967980074D04F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DepartmentHMS/AppDelegate.swift; sourceTree = "<group>"; };
 		B8F7859A1C1967980074D04F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 				F8939D201C2D1D310000F513 /* AddViewController.swift */,
 				B8F7859A1C1967980074D04F /* ViewController.swift */,
 				F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */,
-				B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 				F827EEFD1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift in Sources */,
 				F827EEF81C2D65E100F14DAF /* Departments+CoreDataProperties.swift in Sources */,
 				B8BF263C1C199FA6007F5FED /* TeacherTblVIewCell.swift in Sources */,
-				B8BF26431C19A6B0007F5FED /* DepartmentViewController.swift in Sources */,
 				B8F785991C1967980074D04F /* AppDelegate.swift in Sources */,
 				F827EEF91C2D65E100F14DAF /* Departments.swift in Sources */,
 			);
