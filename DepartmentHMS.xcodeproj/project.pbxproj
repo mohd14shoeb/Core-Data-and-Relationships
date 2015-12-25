@@ -19,6 +19,8 @@
 		B8F785A61C1967980074D04F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F785A41C1967980074D04F /* LaunchScreen.storyboard */; };
 		B8F785AF1C196BB20074D04F /* Teachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */; };
 		B8F785B01C196BB20074D04F /* Teachers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AE1C196BB20074D04F /* Teachers.swift */; };
+		F8939D1F1C2D1B740000F513 /* AppEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */; };
+		F8939D211C2D1D310000F513 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8939D201C2D1D310000F513 /* AddViewController.swift */; };
 		F89BAF811C29DA9C00BC3477 /* TeacherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		B8F785A71C1967980074D04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B8F785AE1C196BB20074D04F /* Teachers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teachers.swift; sourceTree = "<group>"; };
+		F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEntryViewController.swift; sourceTree = "<group>"; };
+		F8939D201C2D1D310000F513 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,8 @@
 		B8BF26441C19A6C7007F5FED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */,
+				F8939D201C2D1D310000F513 /* AddViewController.swift */,
 				B8F7859A1C1967980074D04F /* ViewController.swift */,
 				B8BF26421C19A6B0007F5FED /* DepartmentViewController.swift */,
 				F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */,
@@ -193,6 +199,8 @@
 			files = (
 				F89BAF811C29DA9C00BC3477 /* TeacherDetailVC.swift in Sources */,
 				B8F785A11C1967980074D04F /* DepartmentHMS.xcdatamodeld in Sources */,
+				F8939D211C2D1D310000F513 /* AddViewController.swift in Sources */,
+				F8939D1F1C2D1B740000F513 /* AppEntryViewController.swift in Sources */,
 				B8F785B01C196BB20074D04F /* Teachers.swift in Sources */,
 				B8F7859B1C1967980074D04F /* ViewController.swift in Sources */,
 				B8F785AF1C196BB20074D04F /* Teachers+CoreDataProperties.swift in Sources */,
