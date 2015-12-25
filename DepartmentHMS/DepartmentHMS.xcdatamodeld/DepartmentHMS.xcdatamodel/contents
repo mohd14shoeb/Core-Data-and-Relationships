@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Automatic">
-    <entity name="Departments" representedClassName=".TestEntity" syncable="YES">
+    <entity name="Departments" representedClassName=".Departments" syncable="YES">
         <attribute name="dept_name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teachers" inverseName="departments" inverseEntity="Teachers" syncable="YES"/>
     </entity>

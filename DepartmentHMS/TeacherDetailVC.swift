@@ -11,8 +11,8 @@ import CoreData
 
 class TeacherDetailVC: UIViewController {
     
-    var selectedTeacherObj:NSManagedObject?
-    var deptObj = [TestEntity]()
+    var selectedTeacherObj:Teachers?
+    var deptObj = [Departments]()
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var deptTableView: UITableView!
@@ -21,8 +21,8 @@ class TeacherDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(selectedTeacherObj!.valueForKey("teacher_name") as? String)
-        self.title =  selectedTeacherObj!.valueForKey("teacher_name") as? String
+        print(selectedTeacherObj!.teacher_name)
+        self.title =  selectedTeacherObj!.teacher_name
         deptTableView.dataSource = self
         listAllDepartments()
         
@@ -40,7 +40,7 @@ class TeacherDetailVC: UIViewController {
         do{
             
             let results = try context.executeFetchRequest(fetchReq)
-            deptObj = results as! [TestEntity]
+            deptObj = results as! [Departments]
             
             if deptObj.count > 0{
                 
@@ -90,34 +90,6 @@ extension TeacherDetailVC :UITableViewDataSource,UITableViewDelegate{
         
     
     }
-    func searchAndDeleteThisDeptFromDB(Index:Int){
-        
-        let context = appDelegate.managedObjectContext
-        context.deleteObject(deptObj[Index])
-        
-        do{
-            
-            try context.save()
-            
-            let alertController = UIAlertController(title: "Alert ", message: "", preferredStyle: .Alert)
-            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(defaultAction)
-            alertController.message = "Deleted"
-            self.presentViewController(alertController, animated: true, completion: nil)
-            
-        }catch{
-            
-            let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
-            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(defaultAction)
-            alertController.message = (error as NSError).localizedDescription
-            self.presentViewController(alertController, animated: true, completion: nil)
-            print(error)
-            
-        }
-        
-    }
-    
 }
 
 

@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewTeachertblView: UITableView!
     @IBOutlet weak var teacherDeptSegCntrl: UISegmentedControl!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var teacherObj = [NSManagedObject]()
-    var deptObj = [TestEntity]()
+    var teacherObj = [Teachers]()
+    var deptObj = [Departments]()
     var selectedSegment = Int()
     
     //MARK: VIEW LIFE CYCLE
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         do{
             
             let results = try context.executeFetchRequest(fetchReq)
-            teacherObj = results as! [NSManagedObject]
+            teacherObj = results as! [Teachers]
             if  teacherObj.count > 0 {
                 
                 viewTeachertblView.reloadData()
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
         do{
             
             let results = try context.executeFetchRequest(fetchReq)
-            deptObj = results as! [TestEntity]
+            deptObj = results as! [Departments]
             self.viewTeachertblView.reloadData()
             
             
@@ -216,8 +216,8 @@ extension ViewController :UITableViewDataSource,UITableViewDelegate{
         if selectedSegment == 0{
             
             let cell = tableView.dequeueReusableCellWithIdentifier("teacherCell", forIndexPath: indexPath) as! TeacherTblVIewCell
-            print(teacherObj[indexPath.row].valueForKey("teacher_name") as? String)
-            cell.teacherName?.text = teacherObj[indexPath.row].valueForKey("teacher_name") as? String
+            print(teacherObj[indexPath.row].teacher_name)
+            cell.teacherName?.text = teacherObj[indexPath.row].teacher_name
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             cell.deleteBtn.addTarget(self, action: "deleteThisTeacher:event:", forControlEvents: UIControlEvents.TouchUpInside)
             return cell

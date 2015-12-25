@@ -301,4 +301,33 @@
 ////        print(allTeacherFortTheDepartment)
 //
 //    }
+//    func searchAndDeleteThisDeptFromDB(Index:Int){
+//
+//        let context = appDelegate.managedObjectContext
+//        context.deleteObject(deptObj[Index])
+//
+//        do{
+//
+//            try context.save()
+//
+//            let alertController = UIAlertController(title: "Alert ", message: "", preferredStyle: .Alert)
+//            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//            alertController.addAction(defaultAction)
+//            alertController.message = "Deleted"
+//            self.presentViewController(alertController, animated: true, completion: nil)
+//
+//        }catch{
+//
+//            let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
+//            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//            alertController.addAction(defaultAction)
+//            alertController.message = (error as NSError).localizedDescription
+//            self.presentViewController(alertController, animated: true, completion: nil)
+//            print(error)
+//
+//        }
+//
+//    }
+//
+
 

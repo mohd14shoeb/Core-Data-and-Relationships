@@ -1,8 +1,8 @@
 //
-//  TestEntity+CoreDataProperties.swift
+//  Departments+CoreDataProperties.swift
 //  DepartmentHMS
 //
-//  Created by Bikram on 12/10/15.
+//  Created by Anish on 12/25/15.
 //  Copyright © 2015 Esig. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,8 +12,9 @@
 import Foundation
 import CoreData
 
-extension TestEntity {
+extension Departments {
 
     @NSManaged var dept_name: String?
+    @NSManaged var teachers: NSSet?
 
 }

@@ -88,8 +88,6 @@ class AddViewController: UIViewController {
         
     }
     
-    
-    
     @IBAction func clearBtn(sender: AnyObject) {
         
         teachNameTxtField.text = ""
@@ -200,10 +198,10 @@ class AddViewController: UIViewController {
         
         let context = appDelegate.managedObjectContext
         let entityDes = NSEntityDescription.entityForName("Teachers", inManagedObjectContext: context)
-        let newTeacher = NSManagedObject(entity: entityDes!, insertIntoManagedObjectContext: context)
-        newTeacher.setValue(teachNameTxtField.text, forKey: "teacher_name")
-        newTeacher.setValue(teacherAddressTxtField.text, forKey: "teacher_address")
-        
+        let newTeacher = NSManagedObject(entity: entityDes!, insertIntoManagedObjectContext: context) as! Teachers
+        newTeacher.teacher_name = teachNameTxtField.text
+        newTeacher.teacher_address = teacherAddressTxtField.text
+              
         do{
             
             try  newTeacher.managedObjectContext?.save()
@@ -334,12 +332,11 @@ class AddViewController: UIViewController {
         
         let context = appDelegate.managedObjectContext
         let entityDes = NSEntityDescription.entityForName("Departments", inManagedObjectContext: context)
-        let test = NSManagedObject(entity: entityDes!, insertIntoManagedObjectContext: context) as! TestEntity
-        test.dept_name = teachNameTxtField.text
+        let departMent = NSManagedObject(entity: entityDes!, insertIntoManagedObjectContext: context) as! Departments
+        departMent.dept_name = teachNameTxtField.text
         do{
             
-            try  test.managedObjectContext?.save()
-            
+            try  departMent.managedObjectContext?.save()
             let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
             let defaultAction  = UIAlertAction(title: "OK", style: .Default){(action) in
                 
