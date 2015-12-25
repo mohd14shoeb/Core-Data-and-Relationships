@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         
         if let touch = event.touchesForView(sender)?.first  {
             let point = touch.locationInView(viewTeachertblView)
+            print(point)
             if let indexPath = viewTeachertblView.indexPathForRowAtPoint(point) {
                 
                 searchAndDeleteThisUserNameFromDB(indexPath.row)
