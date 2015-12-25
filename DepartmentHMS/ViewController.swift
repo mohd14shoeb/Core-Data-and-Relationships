@@ -190,7 +190,7 @@ class ViewController: UIViewController {
     
 }
 
-//MARK: Table View datasource and delegate methods
+//MARK: TABLE VIEW DATASOURCE AND DELEGATE METHODS
 extension ViewController :UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

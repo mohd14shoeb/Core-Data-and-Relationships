@@ -16,7 +16,7 @@ class TeacherDetailVC: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var deptTableView: UITableView!
-    
+    //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +32,8 @@ class TeacherDetailVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+     //MARK: LIST DEPARTMENTS
     func listAllDepartments(){
         
         let context = appDelegate.managedObjectContext
@@ -55,15 +57,21 @@ class TeacherDetailVC: UIViewController {
         }
           
     }
-
-    
-    
-    @IBAction func cancelBtn(sender: AnyObject) {
+      //MARK: ADD TEACHER TO THIS DEPARTMENT
+    func addTeacherToThisDepartment(sender:UIButton){
+        //mark as added
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+        
+        
+        
+        
+        
     }
 
 }
+//MARK: TABLE VIEW DATASOURCE AND DELEGATE METHODS
 extension TeacherDetailVC :UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,14 +90,7 @@ extension TeacherDetailVC :UITableViewDataSource,UITableViewDelegate{
         return cell
         
     }
-    
-    func addTeacherToThisDepartment(sender:UIButton){
-        //mark as added
-    
-    
-        
-    
-    }
+
 }
 
 
