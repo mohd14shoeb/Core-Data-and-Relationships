@@ -16,13 +16,13 @@ class TeacherDetailVC: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     @IBOutlet weak var deptTableView: UITableView!
-    @IBOutlet weak var nameLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print(selectedTeacherObj!.valueForKey("teacher_name") as? String)
-        nameLbl.text =  selectedTeacherObj!.valueForKey("teacher_name") as? String
+        self.title =  selectedTeacherObj!.valueForKey("teacher_name") as? String
         deptTableView.dataSource = self
         listAllDepartments()
         

@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var teacherDeptSegCntrl: UISegmentedControl!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var teacherObj = [NSManagedObject]()
+    var deptObj = [TestEntity]()
+    var selectedSegment = Int()
     
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
@@ -26,7 +28,7 @@ class ViewController: UIViewController {
         viewTeachertblView.delegate = self
         viewTeachertblView.dataSource = self
         listAllTeachers()
-
+        
         
     }
     
@@ -34,7 +36,28 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- 
+    
+    
+    
+    @IBAction func teachDeptSegmCntrl(sender: AnyObject) {
+        
+        
+        let segmentedCntrl = sender as! UISegmentedControl
+        selectedSegment = segmentedCntrl.selectedSegmentIndex
+        
+        if selectedSegment == 0{
+            
+            listAllTeachers()
+            
+        }else{
+            
+            ListAllDepartments()
+            
+        }
+        
+    }
+    
+    
     //MARK: LIST ALL TEACHERS
     func listAllTeachers(){
         
@@ -101,15 +124,86 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
+    //MARK: LIST ALL DEPARTMENTS
+    func ListAllDepartments(){
+        
+        let context = appDelegate.managedObjectContext
+        let fetchReq = NSFetchRequest(entityName: "Departments")
+        deptObj = []
+        do{
+            
+            let results = try context.executeFetchRequest(fetchReq)
+            deptObj = results as! [TestEntity]
+            self.viewTeachertblView.reloadData()
+            
+            
+        }catch{
+            
+            print((error as NSError).localizedDescription)
+            
+        }
+        
+    }
+    //MARK: DELETE DEPARTMENT
+    func deleteThisDepartment(sender:UIButton, event: UIEvent){
+        
+        if let touch = event.touchesForView(sender)?.first  {
+            let point = touch.locationInView(viewTeachertblView)
+            if let indexPath = viewTeachertblView.indexPathForRowAtPoint(point) {
+                
+                searchAndDeleteThisDeptFromDB(indexPath.row)
+                deptObj.removeAtIndex(indexPath.row)
+                self.viewTeachertblView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+        }
+        
+    }
+    
+    func searchAndDeleteThisDeptFromDB(Index:Int){
+        
+        let context = appDelegate.managedObjectContext
+        context.deleteObject(deptObj[Index])
+        
+        do{
+            
+            try context.save()
+            
+            let alertController = UIAlertController(title: "Alert ", message: "", preferredStyle: .Alert)
+            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            alertController.message = "Deleted"
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }catch{
+            
+            let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
+            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            alertController.message = (error as NSError).localizedDescription
+            self.presentViewController(alertController, animated: true, completion: nil)
+            print(error)
+            
+        }
+        
+    }
     
 }
- //MARK: Table View datasource and delegate methods
+
+//MARK: Table View datasource and delegate methods
 extension ViewController :UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if selectedSegment == 0{
+            
+            return teacherObj.count
+            
+        }else{
+            
+            return deptObj.count
+            
+        }
         
-        return teacherObj.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -119,22 +213,40 @@ extension ViewController :UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("teacherCell", forIndexPath: indexPath) as! TeacherTblVIewCell
-        print(teacherObj[indexPath.row].valueForKey("teacher_name") as? String)
-        cell.teacherName?.text = teacherObj[indexPath.row].valueForKey("teacher_name") as? String
-        cell.deleteBtn.addTarget(self, action: "deleteThisTeacher:event:", forControlEvents: UIControlEvents.TouchUpInside)
-        return cell
+        if selectedSegment == 0{
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("teacherCell", forIndexPath: indexPath) as! TeacherTblVIewCell
+            print(teacherObj[indexPath.row].valueForKey("teacher_name") as? String)
+            cell.teacherName?.text = teacherObj[indexPath.row].valueForKey("teacher_name") as? String
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            cell.deleteBtn.addTarget(self, action: "deleteThisTeacher:event:", forControlEvents: UIControlEvents.TouchUpInside)
+            return cell
+            
+        }else{
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("teacherCell", forIndexPath: indexPath) as! TeacherTblVIewCell
+            print(deptObj[indexPath.row].dept_name)
+            cell.teacherName?.text = deptObj[indexPath.row].dept_name
+              cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.deleteBtn.addTarget(self, action: "deleteThisDepartment:event:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            return cell
+            
+        }
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("just pass the model object to other class and show the departments all")
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("teacherDetail") as! TeacherDetailVC
-        vc.selectedTeacherObj = teacherObj[indexPath.row]
-        self.presentViewController(vc, animated: true, completion: nil)
-        
+        if selectedSegment == 0{
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("teacherDetail") as! TeacherDetailVC
+            vc.selectedTeacherObj = teacherObj[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
     }
     
 }

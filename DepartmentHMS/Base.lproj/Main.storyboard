@@ -181,6 +181,9 @@
                                     <segment title="Teacher"/>
                                     <segment title="Department"/>
                                 </segments>
+                                <connections>
+                                    <action selector="teachDeptSegmCntrl:" destination="BYZ-38-t0r" eventType="valueChanged" id="zCS-L7-S26"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,21 +335,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHw-4T-c2O">
-                                <rect key="frame" x="279" y="20" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhV-oY-pmh">
-                                <rect key="frame" x="15" y="16" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelBtn:" destination="cRs-uL-o42" eventType="touchUpInside" id="sN8-eC-EYe"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bdT-G2-LQN">
-                                <rect key="frame" x="0.0" y="62" width="600" height="538"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacherCell" id="l6C-Lr-NRg" customClass="TeacherTblVIewCell" customModule="DepartmentHMS" customModuleProvider="target">
@@ -384,19 +374,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RhV-oY-pmh" firstAttribute="leading" secondItem="xYW-kU-RRB" secondAttribute="leadingMargin" constant="-5" id="04T-Pn-vYz"/>
-                            <constraint firstItem="vHw-4T-c2O" firstAttribute="centerX" secondItem="xYW-kU-RRB" secondAttribute="centerX" id="4Hw-xv-DKt"/>
                             <constraint firstAttribute="trailing" secondItem="bdT-G2-LQN" secondAttribute="trailing" id="Icg-56-B93"/>
-                            <constraint firstItem="vHw-4T-c2O" firstAttribute="top" secondItem="YBM-VY-LU2" secondAttribute="bottom" id="XNW-nZ-4sW"/>
+                            <constraint firstItem="bdT-G2-LQN" firstAttribute="top" secondItem="YBM-VY-LU2" secondAttribute="bottom" id="eJ6-9f-ZVz"/>
                             <constraint firstItem="bdT-G2-LQN" firstAttribute="leading" secondItem="xYW-kU-RRB" secondAttribute="leading" id="gL2-bp-7ov"/>
-                            <constraint firstItem="RhV-oY-pmh" firstAttribute="top" secondItem="YBM-VY-LU2" secondAttribute="bottom" constant="-4" id="sJd-YZ-P6X"/>
                             <constraint firstItem="Pla-zM-0Ot" firstAttribute="top" secondItem="bdT-G2-LQN" secondAttribute="bottom" id="uEL-gz-wEZ"/>
-                            <constraint firstItem="bdT-G2-LQN" firstAttribute="top" secondItem="RhV-oY-pmh" secondAttribute="bottom" constant="16" id="vn0-7i-Nf9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deptTableView" destination="bdT-G2-LQN" id="PJD-Ba-axy"/>
-                        <outlet property="nameLbl" destination="vHw-4T-c2O" id="FRK-WQ-iNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEL-i2-GXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
