@@ -24,6 +24,18 @@
 		F8BC026F1C2D996400534D49 /* DepartmentTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC026E1C2D996400534D49 /* DepartmentTblViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		F8BC03491C2DA86C00534D49 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.metal;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# <com.apple.compilers.metal.osx>\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		B8BF263B1C199FA6007F5FED /* TeacherTblVIewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTblVIewCell.swift; sourceTree = "<group>"; };
 		B8F785951C1967980074D04F /* DepartmentHMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DepartmentHMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +151,7 @@
 				B8F785931C1967980074D04F /* Resources */,
 			);
 			buildRules = (
+				F8BC03491C2DA86C00534D49 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
