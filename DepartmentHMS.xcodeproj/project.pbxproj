@@ -21,6 +21,7 @@
 		F8939D1F1C2D1B740000F513 /* AppEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */; };
 		F8939D211C2D1D310000F513 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8939D201C2D1D310000F513 /* AddViewController.swift */; };
 		F89BAF811C29DA9C00BC3477 /* TeacherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */; };
+		F8BC026F1C2D996400534D49 /* DepartmentTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC026E1C2D996400534D49 /* DepartmentTblViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEntryViewController.swift; sourceTree = "<group>"; };
 		F8939D201C2D1D310000F513 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDetailVC.swift; sourceTree = "<group>"; };
+		F8BC026E1C2D996400534D49 /* DepartmentTblViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTblViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				B8BF263B1C199FA6007F5FED /* TeacherTblVIewCell.swift */,
+				F8BC026E1C2D996400534D49 /* DepartmentTblViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				B8F785B01C196BB20074D04F /* Teachers.swift in Sources */,
 				B8F7859B1C1967980074D04F /* ViewController.swift in Sources */,
 				F827EEFD1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift in Sources */,
+				F8BC026F1C2D996400534D49 /* DepartmentTblViewCell.swift in Sources */,
 				F827EEF81C2D65E100F14DAF /* Departments+CoreDataProperties.swift in Sources */,
 				B8BF263C1C199FA6007F5FED /* TeacherTblVIewCell.swift in Sources */,
 				B8F785991C1967980074D04F /* AppDelegate.swift in Sources */,

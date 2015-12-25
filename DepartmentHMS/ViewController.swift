@@ -68,11 +68,7 @@ class ViewController: UIViewController {
             
             let results = try context.executeFetchRequest(fetchReq)
             teacherObj = results as! [Teachers]
-            if  teacherObj.count > 0 {
-                
-                viewTeachertblView.reloadData()
-                
-            }
+            viewTeachertblView.reloadData()
             
         }catch{
             
@@ -106,7 +102,6 @@ class ViewController: UIViewController {
         do{
             
             try context.save()
-            
             let alertController = UIAlertController(title: "Alert ", message: "", preferredStyle: .Alert)
             let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertController.addAction(defaultAction)
@@ -225,11 +220,11 @@ extension ViewController :UITableViewDataSource,UITableViewDelegate{
             
         }else{
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("teacherCell", forIndexPath: indexPath) as! TeacherTblVIewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("departmentCell", forIndexPath: indexPath) as! DepartmentTblViewCell
             print(deptObj[indexPath.row].dept_name)
-            cell.teacherName?.text = deptObj[indexPath.row].dept_name
+            cell.deptNameLbl?.text = deptObj[indexPath.row].dept_name
               cell.accessoryType = UITableViewCellAccessoryType.None
-            cell.deleteBtn.addTarget(self, action: "deleteThisDepartment:event:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.deptDeleteBtn.addTarget(self, action: "deleteThisDepartment:event:", forControlEvents: UIControlEvents.TouchUpInside)
             
             return cell
             
