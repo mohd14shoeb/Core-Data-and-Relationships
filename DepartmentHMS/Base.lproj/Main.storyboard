@@ -126,7 +126,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DepartmentHMS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="DepartmentHMS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -140,7 +140,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacherCell" id="i3y-0L-h4h" customClass="TeacherTblVIewCell" customModule="DepartmentHMS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3y-0L-h4h" id="5jI-Lm-M7n">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -326,7 +326,7 @@
         <!--Teacher DetailVC-->
         <scene sceneID="mP9-ab-kJE">
             <objects>
-                <viewController storyboardIdentifier="teacherDetail" id="cRs-uL-o42" customClass="TeacherDetailVC" customModule="DepartmentHMS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="teacherDetail" automaticallyAdjustsScrollViewInsets="NO" id="cRs-uL-o42" customClass="TeacherDetailVC" customModule="DepartmentHMS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YBM-VY-LU2"/>
                         <viewControllerLayoutGuide type="bottom" id="Pla-zM-0Ot"/>
@@ -354,6 +354,10 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-BY-cg1">
                                                     <rect key="frame" x="543" y="7" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Xn3-fh-A2F"/>
+                                                        <constraint firstAttribute="height" constant="30" id="gxk-sM-qM7"/>
+                                                    </constraints>
                                                 </button>
                                             </subviews>
                                             <constraints>

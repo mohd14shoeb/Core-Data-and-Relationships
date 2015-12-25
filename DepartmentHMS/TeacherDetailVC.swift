@@ -13,27 +13,48 @@ class TeacherDetailVC: UIViewController {
     
     var selectedTeacherObj:Teachers?
     var deptObj = [Departments]()
+    var allDeptsForTheTeacher = [Departments]()
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-    @IBOutlet weak var deptTableView: UITableView!
+    
+    @IBOutlet weak var deptTableView: UITableView!{
+        
+        didSet{
+            
+            deptTableView.dataSource = self
+            deptTableView.delegate = self
+            
+        }
+        
+    }
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        print(selectedTeacherObj!.teacher_name)
         self.title =  selectedTeacherObj!.teacher_name
-        deptTableView.dataSource = self
+        addSaveButtonToNavigationBar()
         listAllDepartments()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-     //MARK: LIST DEPARTMENTS
+    //MARK: ADD SAVE BAR BUTTON AND ITS ACTION
+    func addSaveButtonToNavigationBar(){
+        
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveSelectedDepartmentsToThisTeacher")
+        navigationItem.rightBarButtonItem = saveButton
+        
+    }
+    func saveSelectedDepartmentsToThisTeacher() {
+        
+        
+        
+        
+    }
+    
+    //MARK: LIST DEPARTMENTS
     func listAllDepartments(){
         
         let context = appDelegate.managedObjectContext
@@ -55,21 +76,27 @@ class TeacherDetailVC: UIViewController {
             print((error as NSError).localizedDescription)
             
         }
-          
+        
     }
-      //MARK: ADD TEACHER TO THIS DEPARTMENT
+    //MARK: ADD/DELETE TEACHER TO THIS DEPARTMENT
     func addTeacherToThisDepartment(sender:UIButton){
-        //mark as added
         
-        
-        
-        
-        
-        
-        
+        if allDeptsForTheTeacher.contains(deptObj[sender.tag]){
+            
+            sender.setBackgroundImage(nil, forState: UIControlState.Normal)
+            let indexToRemove =  allDeptsForTheTeacher.indexOf(deptObj[sender.tag])
+            allDeptsForTheTeacher.removeAtIndex(indexToRemove!)
+            
+        }else{
+            //save it in array other wise not
+            sender.setBackgroundImage(UIImage(named: "tick"), forState: UIControlState.Normal)
+            allDeptsForTheTeacher.append( deptObj[sender.tag])
+            
+        }
         
     }
-
+  
+    
 }
 //MARK: TABLE VIEW DATASOURCE AND DELEGATE METHODS
 extension TeacherDetailVC :UITableViewDataSource,UITableViewDelegate{
@@ -86,11 +113,23 @@ extension TeacherDetailVC :UITableViewDataSource,UITableViewDelegate{
         print(deptObj[indexPath.row].dept_name)
         cell.teacherName?.text = deptObj[indexPath.row].dept_name
         cell.deleteBtn.addTarget(self, action: "addTeacherToThisDepartment:", forControlEvents: UIControlEvents.TouchUpInside)
+        if allDeptsForTheTeacher.contains(deptObj[indexPath.row]){
+            
+            cell.deleteBtn.setBackgroundImage(UIImage(named: "tick"), forState: UIControlState.Normal)
+            
+        }else{
+            
+             cell.deleteBtn.setBackgroundImage(nil, forState: UIControlState.Normal)
+            
+        }
+        
         cell.deleteBtn.layer.borderWidth = 2.0
+        cell.deleteBtn.tag = indexPath.row
         return cell
         
+        
     }
-
+    
 }
 
 
