@@ -32,6 +32,7 @@ class TeacherDetailVC: UIViewController {
         self.title =  selectedTeacherObj!.teacher_name
         addSaveButtonToNavigationBar()
         listAllDepartments()
+        allDeptsForTheTeacher = selectedTeacherObj?.departments?.allObjects as! [Departments]
         
     }
     
@@ -47,10 +48,34 @@ class TeacherDetailVC: UIViewController {
         navigationItem.rightBarButtonItem = saveButton
         
     }
+    
+     //TODO: ADD SAVE BAR BUTTON AND ITS ACTION
     func saveSelectedDepartmentsToThisTeacher() {
         
-        
-        
+        let context = appDelegate.managedObjectContext
+        let allDeptsSet = NSSet(array: allDeptsForTheTeacher)
+        selectedTeacherObj!.departments = allDeptsSet
+        do{
+            
+            try context.save()
+            
+            let alertController = UIAlertController(title: "Hey ", message: "", preferredStyle: .Alert)
+            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            alertController.message = "Assigned Departments for this teacher"
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }catch{
+            
+            let alertController = UIAlertController(title: "hey ", message: "", preferredStyle: .Alert)
+            let defaultAction  = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            alertController.message = (error as NSError).localizedDescription
+            self.presentViewController(alertController, animated: true, completion: nil)
+            print(error)
+            
+        }
+
         
     }
     

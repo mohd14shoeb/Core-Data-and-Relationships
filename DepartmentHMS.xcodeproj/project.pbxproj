@@ -15,10 +15,10 @@
 		B8F785A11C1967980074D04F /* DepartmentHMS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8F7859F1C1967980074D04F /* DepartmentHMS.xcdatamodeld */; };
 		B8F785A31C1967980074D04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F785A21C1967980074D04F /* Assets.xcassets */; };
 		B8F785A61C1967980074D04F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F785A41C1967980074D04F /* LaunchScreen.storyboard */; };
-		B8F785AF1C196BB20074D04F /* Teachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */; };
 		B8F785B01C196BB20074D04F /* Teachers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F785AE1C196BB20074D04F /* Teachers.swift */; };
 		F827EEF81C2D65E100F14DAF /* Departments+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827EEF61C2D65E100F14DAF /* Departments+CoreDataProperties.swift */; };
 		F827EEF91C2D65E100F14DAF /* Departments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827EEF71C2D65E100F14DAF /* Departments.swift */; };
+		F827EEFD1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827EEFC1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift */; };
 		F8939D1F1C2D1B740000F513 /* AppEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */; };
 		F8939D211C2D1D310000F513 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8939D201C2D1D310000F513 /* AddViewController.swift */; };
 		F89BAF811C29DA9C00BC3477 /* TeacherDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */; };
@@ -35,10 +35,10 @@
 		B8F785A21C1967980074D04F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8F785A51C1967980074D04F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8F785A71C1967980074D04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B8F785AE1C196BB20074D04F /* Teachers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teachers.swift; sourceTree = "<group>"; };
 		F827EEF61C2D65E100F14DAF /* Departments+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Departments+CoreDataProperties.swift"; path = "DepartmentHMS/Departments+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F827EEF71C2D65E100F14DAF /* Departments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Departments.swift; path = DepartmentHMS/Departments.swift; sourceTree = "<group>"; };
+		F827EEFC1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teachers+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F8939D1E1C2D1B740000F513 /* AppEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEntryViewController.swift; sourceTree = "<group>"; };
 		F8939D201C2D1D310000F513 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F89BAF801C29DA9C00BC3477 /* TeacherDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherDetailVC.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			children = (
 				F827EEF61C2D65E100F14DAF /* Departments+CoreDataProperties.swift */,
 				F827EEF71C2D65E100F14DAF /* Departments.swift */,
-				B8F785AD1C196BB20074D04F /* Teachers+CoreDataProperties.swift */,
+				F827EEFC1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift */,
 				B8F785AE1C196BB20074D04F /* Teachers.swift */,
 			);
 			name = Model;
@@ -203,7 +203,7 @@
 				F8939D1F1C2D1B740000F513 /* AppEntryViewController.swift in Sources */,
 				B8F785B01C196BB20074D04F /* Teachers.swift in Sources */,
 				B8F7859B1C1967980074D04F /* ViewController.swift in Sources */,
-				B8F785AF1C196BB20074D04F /* Teachers+CoreDataProperties.swift in Sources */,
+				F827EEFD1C2D7B8200F14DAF /* Teachers+CoreDataProperties.swift in Sources */,
 				F827EEF81C2D65E100F14DAF /* Departments+CoreDataProperties.swift in Sources */,
 				B8BF263C1C199FA6007F5FED /* TeacherTblVIewCell.swift in Sources */,
 				B8BF26431C19A6B0007F5FED /* DepartmentViewController.swift in Sources */,
