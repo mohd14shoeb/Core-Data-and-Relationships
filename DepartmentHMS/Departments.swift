@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-
-
 class Departments: NSManagedObject {
     
     override func prepareForDeletion() {
