@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var teacherObj = [Teachers]()
     var deptObj = [Departments]()
     var selectedSegment = Int()
-    
+
     //MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         
