@@ -10,8 +10,22 @@ import Foundation
 import CoreData
 
 
+
 class Departments: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+    
+    override func prepareForDeletion() {
+        
+        for tea in self.teachers!{
+            if let temp = tea as? Teachers{
+                if temp.departments?.count == 1{
+                    self.managedObjectContext?.deleteObject(temp)
+                }else{
+                    print("this teacher is assigned to another department also")
+                }
+            }
+            
+        }
+        
+    }
+    
 }

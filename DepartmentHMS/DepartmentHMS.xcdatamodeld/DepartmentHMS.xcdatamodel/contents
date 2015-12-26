@@ -7,10 +7,10 @@
     <entity name="Teachers" representedClassName=".Teachers" syncable="YES">
         <attribute name="teacher_address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teacher_name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="departments" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Departments" inverseName="teachers" inverseEntity="Departments" syncable="YES"/>
+        <relationship name="departments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Departments" inverseName="teachers" inverseEntity="Departments" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Departments" positionX="-63" positionY="0" width="128" height="75"/>
-        <element name="Teachers" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Departments" positionX="-405" positionY="-72" width="128" height="73"/>
+        <element name="Teachers" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>
